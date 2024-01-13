@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div>
+        <h1>Sign Up</h1>
+        <form method="POST" action="/register">
+            <label for="name"> First Name</label>
+            <input type="text" placeholder="firstName" name="firstName">
+            <br>
+            <br>
+            <label for="lastName">Last Name</label>
+            <input type="text" placeholder="lastName" name="lastName">
+            <br>
+            <br>
+            <label for="email">Email</label>
+            <input type="email" placeholder="Email" name="email">
+            <br>
+            <br>
+            
+            <label for="password">Password</label>
+            <input type="password" placeholder="password" name="password">
+            <br>
+            <br>
+            <label for="Confirmpassword" class="form-label">Confirm password</label>
+             <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" aria-describedby="emailHelp" placeholder="Confirm password">
+            <input type="submit" value="Sing In">
+
+        </form>
+    </div>
+</body>
+</html>

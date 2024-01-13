@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="hotelinfo-nav">
+    <div class="info-left">hello</div>
+    <div class="info-right">
+        <a href="#">share</a>
+        <a href="#">save</a>
+    </div>
+   </div>
+   <% hotelId.forEach(x=>{%>
+    
+    <% if(x._id==id){%>
+       <div class="gridStyle">
+        <div class="gridformat"></div>
+        <div class="gridformat"></div>
+        <div class="gridformat"></div>
+        <div class="gridformat"></div>
+       </div>
+    <%}%>
+       
+    
+          
+   <%})%>
+</body>
+</html>

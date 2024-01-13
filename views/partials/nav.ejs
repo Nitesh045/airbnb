@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/style.css" type="text/css">
+    <script src="https://kit.fontawesome.com/1d2b90fefa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="navbar">
+            <div class="left">
+                <img src="/img/images.png">
+            </div>
+            <div class="mid">
+                <div class="mid-section">
+                    <div class="mid-1 first "><p>Anywhere</p></div>
+                    <div class="mid-1  second ">
+                        <p>Any week</p>
+                    </div>
+                    <div class="mid-1 third ">
+                        <spam >Add guest</spam>
+                      <span class="spam-bar">  <i class="fa-solid fa-magnifying-glass search" ></i></span>
+                    </div>
+                </div>
+                <!-- <div class="afterChange">
+                    <div>Stay</div>
+                    <div>Experinec</div>
+                    <div>Who</div>
+                </div> -->
+            </div>
+            <div class="right">
+                <div class="airbn-home">
+                    Airbn Your Home    
+                </div>
+                <div class="world">
+                    <img src="/img/earth1.png">
+                </div>
+                <div class="profile" id="pro" onclick="showProfile()">
+                     <span>
+                        <img src="/img/threeLine.png">
+                        <img id="pic" src="/img/avtar.png">
+                     </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <modal id="modal" style="display: none;">
+         <div>
+            <div>
+                <a href="register">Register</a>
+            </div>
+            <div>
+                <a href="login">Login</a>
+            </div>
+            <div>
+                <a href="#">Logout</a>
+            </div>
+         </div>
+    </modal>
+    <script>
+      const proModal= document.getElementById('modal')
+       
+       function showProfile(){
+        if(proModal.style.display==='none'){
+            proModal.style.display='block'
+        }
+        else{
+            proModal.style.display="none"
+        }
+       }
+    </script>
+</body>
+</html>

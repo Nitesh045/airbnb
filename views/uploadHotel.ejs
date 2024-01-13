@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="/uploadHotel" method="POST" enctype="multipart/form-data" >
+            <label for="category">Category</label>
+            <select id="select" name="category">
+                <option value="Amazing">Selcte cotegory</option>
+                <!-- <option value="Amazing">Amazing</option> -->
+            </select>
+            <br>
+            <br>
+            <label for="Country">Country</label>
+            <input type="text" name="country" placeholder="Enter Your Country Name">
+            <br>
+            <br>
+            <label for="image">Company Photo</label>
+            <input class="input1" type="file" name="hotelImg" placeholder="Hotel Image" multiple/>
+            <br>
+            <br>
+            <label for="City">City</label>
+            <input type="text" placeholder="Enter Your City" name="city">
+            <br>
+            <br>
+            <label for="price">Price Per Night</label>
+            <input type="number" placeholder="Enter Price per Night" name="price">
+            <br>
+            <br>
+            <label for="Name Of House">
+                Name of House
+            </label>
+            <input type="text" name="nameOfhouse">
+            <br>
+            <br>
+           
+            <label for="hostName">Host Name</label>
+            <input type="text" placeholder="Host Name" name="hostName">
+            <br>
+            <br>
+            <input type="submit" value="Host">
+
+        </form>
+    </div>
+    <script src="/js/option.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+.navbar{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border-bottom: solid 1.5px rgb(133, 130, 130);
+    justify-content: space-between;
+}
+.left > img{
+  width: 150px;
+  padding-left: 20px;
+}
+.mid{
+    margin-top: -5px;
+    padding: 15px;
+    border-radius: 20px;
+    border: solid 1px grey;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    height: 50px;
+    
+    width: 300px;
+   
+}
+.mid-section{
+    font-weight: bold;
+    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+}
+.first{
+    border-right: 1.5px solid rgb(133, 130, 130);
+}
+.second{
+    border-right: 1.5px solid rgb(133, 130, 130);
+    margin-left: 10px;
+}
+.third{
+    opacity: 0.5px;
+    color: gray;
+    margin-left: 10px;
+    justify-content: right;
+} 
+
+.spam-bar{
+  padding: 10px;
+   border-radius: 50px;
+   background-color: crimson;
+   border: none;
+   color: aliceblue;
+  
+}
+.right{
+    display: flex;
+    justify-content: right;
+    margin-right: 30px;
+    
+
+   
+}
+.world img{
+    width: 25px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 40px;
+    margin-top: -5px;
+}
+.profile img{
+    width: 30px;
+}
+#pic{
+    width: 20px;
+    border-radius: 5px;
+}
+
+#modal{
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    width: 200px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    text-align: center;
+    background-color: white;
+    
+}
+#modal div a{
+    text-decoration: none;
+    color: black;
+    
+}
+#modal div{
+   padding: 20px;
+}

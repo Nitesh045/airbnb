@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.scroll-ticket{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    
+   
+    
+}
+.ticket a img{
+    width: 30px;
+    justify-content: center;
+    margin-left: 15px;
+    text-align: center;
+}
+.ticket a{
+    text-decoration: none;
+    color: black;
+
+}
+.hotels{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 15px;
+}
+.div-img >img{
+  width: 300px;
+  height: 200px;
+}
+
+
+/* .slinding{
+    
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+} */
