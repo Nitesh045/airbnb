@@ -81,7 +81,7 @@ app.post('/uploadHotel',upload.array('hotelImg'),async(req,res)=>{
            });
            const hotelResult = await registerHotel.save();
            console.log(hotelResult);
-           res.send('data adde')
+           res.redirect('/')
        } catch (error) {
         console.log(error)
        }
@@ -93,9 +93,9 @@ app.listen(5000,()=>{
     console.log('server is listion on 5000')
 })
 
-app.use(authRoute)
+app.use(authRoute);
 
 //app.use(hotelRouter)
 
 
-app.use(hotelinfo)
+app.use(hotelinfo);
