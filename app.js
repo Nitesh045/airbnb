@@ -7,26 +7,26 @@ const authRoute= require('./routes/authRoutes')
 const cookieParser= require('cookie-parser');
 app.use(express.json());
 app.use(cookieParser())
-
+const {requireAuth,checkUser}=require('./middleware/authmiddleware')
 app.use(express.urlencoded({extended:false}))
 
 const database= require('./backend/conn/db');
 const hotelModel= require('./backend/models/amazingView');
-const requireAuth = require('./middleware/authmiddleware');
+
 //const hotelRouter = require('./routes/hotelRoutes');
 const hotelinfo=require('./routes/hotelInfo')
 
 
 app.set('view engine','ejs');
 app.use(express.static('public'));
-
+app.get('*',checkUser)
 app.get('/',async(req,res)=>{
     
     try {
         const hotelAmazing=await hotelModel.find({category:"Amazing"})
         .then((data)=>{
           res.render('home',{data});
-          console.log(data)
+          //console.log(data)
         })
         .catch ((e)=>console.log(e))
     } catch (error) {

@@ -32,7 +32,7 @@ module.exports.signup_post= async(req,res)=>{
             const token = createToken(registerResult._id);
             res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000})
             //console.log(token)
-            res.status(201).render('home')
+            res.status(200).render('login')
         }
     } catch (e ) {
         res.send('error')
@@ -52,8 +52,10 @@ module.exports.login_post=async(req,res)=>{
     const token= createToken(userDetails._id);
     res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000});
     if(matchedpas){
-        res.status(200).render('home')
-        console.log(userDetails._id)
+        
+       res.status(200).redirect('/');
+        console.log(userDetails);
+        console.log(userDetails._id);
     }
 
 }
