@@ -54,8 +54,8 @@ module.exports.login_post=async(req,res)=>{
     if(matchedpas){
         
        res.status(200).redirect('/');
-        console.log(userDetails);
-        console.log(userDetails._id);
+       // console.log(userDetails);
+        //console.log(userDetails._id);
     }
 
 }

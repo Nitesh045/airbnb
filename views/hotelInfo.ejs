@@ -7,6 +7,7 @@
     <title>AboutPage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1d2b90fefa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/hotelInfo.css">
 </head>
 
@@ -43,16 +44,19 @@
                 </div>
                 <div class="details">
                     <div class="details-hotel">
-                        <h2> Unique Retreat -<%= x.nameOfhouse %> </h2>
-                        <h4>Entire guest suite in Minden ,<%= x.country %></h4>
-                        <p>12 guests3. bedrooms . 4beds  . 1.5bathrooms</p>
+                        <h2> Unique Retreat -<%= x.nameOfhouse %>
+                        </h2>
+                        <h4>Entire guest suite in Minden ,<%= x.country %>
+                        </h4>
+                        <p>12 guests3. bedrooms . 4beds . 1.5bathrooms</p>
                         <h3>New</h3>
                         <div class="host-detail" style="display: flex;">
                             <div class="left-host">
                                 <img src="#">
                             </div>
-                            <div class="right-host" >
-                                <h3>Hosted by  <%= x.hostName %></h3>
+                            <div class="right-host">
+                                <h3>Hosted by <%= x.hostName %>
+                                </h3>
                                 <p style="color: gray; opacity: 0.8;">SuperHost . 6 years hosting</p>
                             </div>
                         </div>
@@ -62,7 +66,11 @@
                             <h3>Free cancellation before 28 January</h3>
                         </div>
                         <div class="content-text" style="border-bottom: solid 1px grey;">
-                            <p>Whether you are looking for a peaceful pied-à-terre for a professional stay or for a tourist stay in the Montpellier region, our apartment is for you. Place in a quiet residence, at the gates of Montpellier, it has all the commodities. You will be 1 min walk from the tram, 20 min from the train station and the comedy square, close to the A75, all shops. In addition, it is perfectly equipped.</p>
+                            <p>Whether you are looking for a peaceful pied-à-terre for a professional stay or for a
+                                tourist stay in the Montpellier region, our apartment is for you. Place in a quiet
+                                residence, at the gates of Montpellier, it has all the commodities. You will be 1 min
+                                walk from the tram, 20 min from the train station and the comedy square, close to the
+                                A75, all shops. In addition, it is perfectly equipped.</p>
                         </div>
                         <div class="place-offer">
                             <p>Kitchen</p>
@@ -75,17 +83,62 @@
                     </div>
                     <div class="price-detail">
                         <div class="price">
-                           <p>Rupees per night <%= x.price %> </p>
-
+                            <h2>
+                                <%= x.price %> night
+                            </h2>
+                            <div class="date">
+                                <input type="date" value="" id="starting-date">
+                                <input type="date" value="" id="end-date">
+                                <div class="guest-add">
+                                    <p>Guest <br>
+                                        <b id="total-member">1 Guest</b><b><span id="childTotal"></span></b>
+                                    </p>
+                                    <p class="drowp-arrow" onclick="ShowModal()"><i class="fa-solid fa-caret-down"></i>
+                                    </p>
+                                </div>
+                                <!-- adding guest start ...........here -->
+                                <div id="modalView" style="display: none;">
+                                    <div class="modal-guest" id="modalId">
+                                        <div class="modal-addGuest">
+                                            Adult
+                                            <p>13+</p>
+                                        </div>
+                                        <div class="addAndRemoveGuest">
+                                            <button id="addMember" onclick="addMemberPlus()" class="btn-add"><i
+                                                    class="fa-solid fa-plus"></i></button>
+                                            <p id="member">1</p> <button id="minusMember" onclick="minusMemberPlus()"
+                                                class="btn-add"><i class="fa-solid fa-minus"></i></button>
+                                        </div>
+                                        <!-- add child -->
+                                        <div class="modal-addGuest">
+                                            Child
+                                            <p>2+</p>
+                                        </div>
+                                        <div class="addAndRemoveGuest">
+                                            <button id="addMember" onclick="addChildPlus()" class="btn-add"><i
+                                                    class="fa-solid fa-plus"></i></button>
+                                            <p id="member">1</p> <button id="minusMember" onclick="minusChildPlus()"
+                                                class="btn-add"><i class="fa-solid fa-minus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- adding guest end ................here -->
+                            </div>
+                        </div>
+                        <div class="reserveButton">
+                            <button>Reserve</button>
                         </div>
                     </div>
+
                 </div>
-                    <%}%>
+                <%}%>
 
 
 
-                        <%})%>
+                    <%})%>
     </div>
+
+    <script src="/js/calender.js"></script>
 </body>
 
 </html>

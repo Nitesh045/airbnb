@@ -22,7 +22,7 @@ const checkUser=(req,res,next)=>{
     const token = req.cookies.jwt;
     if(token){
        
-        jwt.verify(token,'qwertyuiooplkjhgfdazxcvbnm', async(err,decodedtoken)=>{
+        jwt.verify(token,'qwertyuioplkjhgfdsazxcvbnm', async(err,decodedtoken)=>{
             if(err){
              console.log(err);
              
@@ -32,7 +32,7 @@ const checkUser=(req,res,next)=>{
             // console.log(decodedtoken);
              let user= await userData.findById(decodedtoken.id)
             // console.log(user)
-             res.locals.User=user;
+             res.locals.user=user;
                 next();
             }
          })

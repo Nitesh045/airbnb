@@ -1,50 +1,129 @@
-.gridformat{
-   width: 300px;
-   height: 200px;
-   
+.gridformat {
+    width: 300px;
+    height: 200px;
+
 }
-.gridformat >img{
+
+.gridformat>img {
     width: 300px;
     height: 200px;
 }
 
-.gridStyle{
+.gridStyle {
     display: grid;
     grid-template-columns: auto auto;
-    
+
 }
-.second-img{
+
+.second-img {
     display: grid;
     grid-template-columns: auto auto;
 }
 
-.first-img > img{
+.first-img>img {
     height: 400px;
 
 }
-.details{
+
+.details {
     display: grid;
     grid-template-columns: auto auto;
-   
-}
 
-.price-detail{
+}
+/* sticky styling for reservre......................here */
+.price-detail {
     width: 400px;
     height: 100vh;
     position: sticky;
-    right: 0px;
+    right: 20px;
     top: 50px;
     height: 400px;
-    border: solid gray 1px;
+    
     margin-top: 50px;
     justify-items: flex-end;
     justify-content: right;
     margin-left: 70px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
+
 /* user name and image style  */
-.host-detail{
+.host-detail {
     border-bottom: solid 1px grey;
     border-top: solid 1px grey;
-    mar
+
+}
+/* styling date section..........................here */
+
+.date input{
+    height: 40px;
+    width:45% ;
+    border: solid 2px rgb(91, 88, 88);
+    border-radius: 10%;
+    margin-left: 10px;
+
+}
+
+/* adding guest............................here */
+.guest-add {
+    border: solid 2px rgb(200, 200, 202);
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.drowp-arrow {
+    margin-right: 20px;
+
+    font-size: 25px;
+}
+
+.modal-guest {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addAndRemoveGuest {
+    display: inline-flex;
+    margin-top: 10px;
+}
+
+.btn-add{
+   
+    width: 30px;
+    height: 30px;
+  
+    border-radius: 50%;
+    border: solid 1px black;
+    font-weight: bold;
+    padding: auto;
+    text-align: center;
+
+}
+.addAndRemoveGuest p{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+   
+}
+
+.drowp-arrow:hover{
+    cursor: pointer;
+}
+/* reserver button..................here */
+.reserveButton{
+    width: 100%;
+    text-align: center;
+
+
+}
+.reserveButton button{
+    background-color: red;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding-left: 40%;
+    padding-right: 40%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
 }
