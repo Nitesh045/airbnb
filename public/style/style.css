@@ -104,3 +104,39 @@
 #modal div{
    padding: 20px;
 }
+
+
+/* make resonsive  */
+
+@media (max-width: 800px) {
+    /* Smaller Resolution Desktops and Laptops */
+    .navbar{
+        display: grid;
+        justify-content: center;
+    }
+   .left{
+    display: none;
+   }
+   .right{
+    display: none;
+   }
+   .mid{
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+   }
+};
+@media (max-width: 450px) {
+    /* Even Smaller devices */
+    .left{
+        display: none;
+       }
+       .right{
+        display: none;
+       }
+       .mid{
+        width: 150rem;
+       }
+
+   
+}

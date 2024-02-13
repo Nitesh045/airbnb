@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style/home.css" type="text/css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="/style/home.css" type="text/css">
 </head>
+
 <body>
-    <div class="main">
+   <div class="main">
       <navbar>
-        <%- include('partials/nav'); -%>
-      </navbar> 
+         <%- include('partials/nav'); -%>
+      </navbar>
       <section>
          <%- include('partials/ticket');-%>
       </section>
-      
-     
+
+
       <!-- 
         main page showing all view
        -->
-      
-     <div class="gridTamplet">
-      <div class="hotels">
-         
-         <% data.forEach(x=>{%>
-            <a href="/hotelInfo/<%=x._id %>" style="text-decoration: none; color: black;">
-         <div class="div-img">
-            
-            
-               
-                <img src="./img/amazingView/<%=x.hotelImg[0].filename%>" >
-            
-            
-            <div class="details-hotel">
-               
-               <h2><%= x.city %></h2>
-               <p>Mountain and garden views</p>
-               
-               <br>
-               <%= x.price %> night
-            </div>
-         </div>
-            </a>
-      <%})%>
-         </div>
-     </div>
-    
-    </div>
-    <footer>
-      <%- include('partials/footer'); -%>
-    </footer>
 
-    <script src="/js/index.js"></script>
+      <div class="gridTamplet">
+
+         <div class="hotels">
+
+            <% data.forEach(x=>{%>
+               <a href="/hotelInfo/<%=x._id %>" style="text-decoration: none; color: black;">
+                  <div class="div-img">
+
+
+
+                     <img src="./img/amazingView/<%=x.hotelImg[0].filename%>">
+
+
+                     <div class="details-hotel">
+
+                        <h2>
+                           <%= x.city %>
+                        </h2>
+                        <p>Mountain and garden views</p>
+
+
+                        <%= x.price %> night
+                     </div>
+                  </div>
+               </a>
+               <%})%>
+         </div>
+      </div>
+
+   </div>
+   <footer>
+      <%- include('partials/footer'); -%>
+   </footer>
+
+   <script src="/js/index.js"></script>
 </body>
+
 </html>

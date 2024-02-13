@@ -5,12 +5,21 @@
 }
 .scroll-ticket{
     margin-top: 30px;
+    width: 80%;
     display: flex;
-    justify-content: space-around;
-    text-align: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     
+    
+}
+.scroll-ticket::-webkit-scrollbar {
+    display: none;
+}
+.ticket{
+    min-width: 10rem;
+    padding: 5px;
+    margin-left: 10px;
    
-    
 }
 .ticket a img{
     width: 30px;
@@ -23,16 +32,33 @@
     color: black;
 
 }
+.ticket a:active{
+    border-bottom: 1px solid red;
+}
+/* home page */
 .hotels{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-column-gap: 15px;
+    
+    text-align: center;
+    grid-gap: 20px;
+    margin-left: 20px;
+    margin-top: 1rem;
+
+}
+.div-img{
+    border: 1px solid grey;
+    margin-bottom: 20px;
+    width: 16rem;
+    
 }
 .div-img >img{
-  width: 300px;
+  width: 100%;
   height: 200px;
 }
-
+.details-hotel{
+    padding: 20px;
+}
 
 /* .slinding{
     
@@ -40,3 +66,68 @@
   position: relative;
   margin: auto;
 } */
+.upper-footer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    
+
+}
+.upper-footer li{
+    list-style: none;
+    padding: 10px;
+}
+.footer-below{
+    border-top: 1px solid grey;
+}
+
+/* responsive design */
+@media (max-width: 800px) {
+    /* Smaller Resolution Desktops and Laptops */
+   .hotels{
+    display: grid;
+    grid-template-columns: auto auto;
+   }
+   .div-img{
+    width: 20rem;
+   }
+}
+@media (max-width: 650px) {
+    /* Smaller devices */
+    .hotels{
+        display: grid;
+        grid-template-columns: auto ;
+       }
+       .div-img{
+        width: 90%;
+       }
+}
+@media (max-width: 450px) {
+    /* Even Smaller devices */
+    .hotels{
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        text-align: center;
+        justify-items: center;
+
+        
+    }
+
+    .div-img{
+        width: 30rem;
+        height: auto;
+
+       }
+}
+
+/* @media (max-width: 1000px) {
+    /* Smaller Resolution Desktops and Laptops */
+   /* .hotels{
+    display: grid;
+    grid-template-columns: auto auto auto;
+   }
+   .div-img{
+    width: 15rem;
+   }
+} */ 
