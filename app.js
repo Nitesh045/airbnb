@@ -19,6 +19,8 @@ const hotelinfo=require('./routes/hotelInfo')
 
 app.set('view engine','ejs');
 app.use(express.static('public'));
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
 app.get('*',checkUser)
 app.get('/',async(req,res)=>{
     

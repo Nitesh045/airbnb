@@ -1,5 +1,5 @@
 const mongoose= require('mongoose');
-const dbUri= 'mongodb://0.0.0.0:27017/AirbnbProject';
+const dbUri= 'mongodb+srv://nitesh045:Nitesh45%40@cluster0.an21aml.mongodb.net/AirbnbProject';
 mongoose.connect(dbUri,{
     useNewUrlParser: true, 
     useUnifiedTopology: true,
