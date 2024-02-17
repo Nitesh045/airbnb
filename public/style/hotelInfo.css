@@ -1,3 +1,12 @@
+.hotelInfo-nav{
+    width: 100%;
+}
+.container-fluid{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
 .gridformat {
     width: 300px;
     height: 200px;
@@ -11,7 +20,7 @@
 
 .gridStyle {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
 
 }
 
@@ -21,7 +30,8 @@
 }
 
 .first-img>img {
-    height: 400px;
+    width: 100%;
+
 
 }
 
@@ -43,7 +53,7 @@
 /* sticky styling for reservre......................here */
 .price-detail {
     width: 400px;
-    height: 75vh;
+    height: 30rem;
     position: sticky;
     top: 100px;
     right: 20px;

@@ -5,199 +5,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AboutPage</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link rel="stylesheet" href="/style/style.css">;
+    <link rel="stylesheet" href="/style/hotelInfo.css">;
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1d2b90fefa.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/style/hotelInfo.css">;
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+
 
 </head>
 
 <body>
-    <navbar>
-        <%- include('partials/nav'); -%>
-    </navbar>
-    <div class="">
-        <% hotelId.forEach(x=>{%>
+    <div class="container-fluid">
+        <%- include('partials/nav')-%>
+            <div class="">
+                <% hotelId.forEach(x=>{%>
 
-            <% if(x._id==id){%>
-                <div class="hotelinfo-nav row row-cols-2 ">
-                    <div class="info-left col">hello</div>
-                    <div class="info-right col">
-                        <a href="#">share</a>
-                        <a href="#">save</a>
-                    </div>
-                </div>
-                <div class="gridStyle ">
-                    <div class="first-img">
-                        <img src="/img/amazingView/<%= x.hotelImg[3].filename %>">
-                    </div>
-                    <div class="second-img">
-                        <div class="gridformat">
-                            <img src="/img/amazingView/<%= x.hotelImg[3].filename %>">
-                        </div>
-                        <div class="gridformat">
-                            <img src="/img/amazingView/<%=x.hotelImg[0].filename %>">
-                        </div>
-                        <div class="gridformat ">
-                            <img src="/img/amazingView/<%=x.hotelImg[2].filename %>">
-                        </div>
-                        <div class="gridformat">
-                            <img src="/img/amazingView/<%=x.hotelImg[1].filename %>">
-                        </div>
-                    </div>
-                </div>
-                <div class="details">
-                    <div class="details-hotel">
-                        <h2> Unique Retreat -<%= x.nameOfhouse %>
-                        </h2>
-                        <h4>Entire guest suite in Minden ,<%= x.country %>
-                        </h4>
-                        <p>12 guests3. bedrooms . 4beds . 1.5bathrooms</p>
-                        <h3>New</h3>
-                        <div class="host-detail" style="display: flex;">
-                            <div class="left-host">
-                                <img src="#">
-                            </div>
-                            <div class="right-host">
-                                <h3>Hosted by <%= x.hostName %>
-                                </h3>
-                                <p style="color: gray; opacity: 0.8;">SuperHost . 6 years hosting</p>
+                    <% if(x._id==id){%>
+                        <div class="hotelinfo-nav row row-cols-2 ">
+                            <div class="info-left col">hello</div>
+                            <div class="info-right col">
+                                <a href="#">share</a>
+                                <a href="#">save</a>
                             </div>
                         </div>
-                        <div class="content">
-                            <h3>Self check-in</h3>
-                            <p style="opacity: 0.9;">Check yourself in with the smartlock</p>
-                            <h3>Free cancellation before 28 January</h3>
-                        </div>
-                        <div class="content-text" style="border-bottom: solid 1px rgb(202, 199, 199);">
-                            <p>Whether you are looking for a peaceful pied-à-terre for a professional stay or for a
-                                tourist stay in the Montpellier region, our apartment is for you. Place in a quiet
-                                residence, at the gates of Montpellier, it has all the commodities. You will be 1 min
-                                walk from the tram, 20 min from the train station and the comedy square, close to the
-                                A75, all shops. In addition, it is perfectly equipped.</p>
-                        </div>
-                        <div class="place-offer">
-                            <h4>What This Place Offer</h4>
-                            <p>Kitchen</p>
-                            <p>Wifi</p>
-                            <p>Car parking on premises</p>
-                            <p>Pool</p>
-                            <p>Tv</p>
-                            <button>Show all more amenities</button>
-                        </div>
-                    </div>
-                    <div class="price-detail">
-                        <div class="price">
-                            <h2>
-                                <%= x.price %> night
-                            </h2>
-                            <div class="date">
-                                <input type="date" value="" id="starting-date">
-                                <input type="date" value="" id="end-date">
-                                <div class="guest-add">
-                                    <p>Guest <br>
-                                        <b id="total-member">1 Guest</b><b><span id="childTotal"></span></b>
-                                    </p>
-                                    <p class="drowp-arrow" onclick="ShowModal()"><i class="fa-solid fa-caret-down"></i>
-                                    </p>
+                        <div class="gridStyle ">
+                            <div class="first-img">
+                                <img src="/img/amazingView/<%= x.hotelImg[3].filename %>">
+                            </div>
+                            <div class="second-img">
+                                <div class="gridformat">
+                                    <img src="/img/amazingView/<%= x.hotelImg[3].filename %>">
                                 </div>
-                                <!-- adding guest start ...........here -->
-                                <div id="modalView" style="display: none;">
-                                    <div class="modal-guest" id="modalId">
-                                        <div class="modal-addGuest">
-                                            Adult
-                                            <p>13+</p>
-                                        </div>
-                                        <div class="addAndRemoveGuest">
-                                            <button id="addMember" onclick="addMemberPlus()" class="btn-add"><i
-                                                    class="fa-solid fa-plus"></i></button>
-                                            <p id="member">1</p> <button id="minusMember" onclick="minusMemberPlus()"
-                                                class="btn-add"><i class="fa-solid fa-minus"></i></button>
-                                        </div>
-                                        <!-- add child -->
-                                        <div class="modal-addGuest">
-                                            Child
-                                            <p>2+</p>
-                                        </div>
-                                        <div class="addAndRemoveGuest">
-                                            <button id="addMember" onclick="addChildPlus()" class="btn-add"><i
-                                                    class="fa-solid fa-plus"></i></button>
-                                            <p id="member">1</p> <button id="minusMember" onclick="minusChildPlus()"
-                                                class="btn-add"><i class="fa-solid fa-minus"></i></button>
-                                        </div>
+                                <div class="gridformat">
+                                    <img src="/img/amazingView/<%=x.hotelImg[0].filename %>">
+                                </div>
+                                <div class="gridformat ">
+                                    <img src="/img/amazingView/<%=x.hotelImg[2].filename %>">
+                                </div>
+                                <div class="gridformat">
+                                    <img src="/img/amazingView/<%=x.hotelImg[1].filename %>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <div class="details-hotel">
+                                <h2> Unique Retreat -<%= x.nameOfhouse %>
+                                </h2>
+                                <h4>Entire guest suite in Minden ,<%= x.country %>
+                                </h4>
+                                <p>12 guests3. bedrooms . 4beds . 1.5bathrooms</p>
+                                <h3>New</h3>
+                                <div class="host-detail" style="display: flex;">
+                                    <div class="left-host">
+                                        <img src="#">
+                                    </div>
+                                    <div class="right-host">
+                                        <h3>Hosted by <%= x.hostName %>
+                                        </h3>
+                                        <p style="color: gray; opacity: 0.8;">SuperHost . 6 years hosting</p>
                                     </div>
                                 </div>
-                                <!-- adding guest end ................here -->
+                                <div class="content">
+                                    <h3>Self check-in</h3>
+                                    <p style="opacity: 0.9;">Check yourself in with the smartlock</p>
+                                    <h3>Free cancellation before 28 January</h3>
+                                </div>
+                                <div class="content-text" style="border-bottom: solid 1px rgb(202, 199, 199);">
+                                    <p>Whether you are looking for a peaceful pied-à-terre for a professional stay or
+                                        for a
+                                        tourist stay in the Montpellier region, our apartment is for you. Place in a
+                                        quiet
+                                        residence, at the gates of Montpellier, it has all the commodities. You will be
+                                        1 min
+                                        walk from the tram, 20 min from the train station and the comedy square, close
+                                        to the
+                                        A75, all shops. In addition, it is perfectly equipped.</p>
+                                </div>
+                                <div class="place-offer">
+                                    <h4>What This Place Offer</h4>
+                                    <p>Kitchen</p>
+                                    <p>Wifi</p>
+                                    <p>Car parking on premises</p>
+                                    <p>Pool</p>
+                                    <p>Tv</p>
+                                    <button>Show all more amenities</button>
+                                </div>
+                            </div>
+                            <div class="price-detail">
+                                <div class="price">
+                                    <h2>
+                                        <%= x.price %> night
+                                    </h2>
+                                    <div class="date">
+                                        <input type="date" value="" id="starting-date">
+                                        <input type="date" value="" id="end-date">
+                                        <div class="guest-add">
+                                            <p>Guest <br>
+                                                <b id="total-member">1 Guest</b><b><span id="childTotal"></span></b>
+                                            </p>
+                                            <p class="drowp-arrow" onclick="ShowModal()"><i
+                                                    class="fa-solid fa-caret-down"></i>
+                                            </p>
+                                        </div>
+                                        <!-- adding guest start ...........here -->
+                                        <div id="modalView" style="display: none;">
+                                            <div class="modal-guest" id="modalId">
+                                                <div class="modal-addGuest">
+                                                    Adult
+                                                    <p>13+</p>
+                                                </div>
+                                                <div class="addAndRemoveGuest">
+                                                    <button id="addMember" onclick="addMemberPlus()" class="btn-add"><i
+                                                            class="fa-solid fa-plus"></i></button>
+                                                    <p id="member">1</p> <button id="minusMember"
+                                                        onclick="minusMemberPlus()" class="btn-add"><i
+                                                            class="fa-solid fa-minus"></i></button>
+                                                </div>
+                                                <!-- add child -->
+                                                <div class="modal-addGuest">
+                                                    Child
+                                                    <p>2+</p>
+                                                </div>
+                                                <div class="addAndRemoveGuest">
+                                                    <button id="addMember" onclick="addChildPlus()" class="btn-add"><i
+                                                            class="fa-solid fa-plus"></i></button>
+                                                    <p id="member">1</p> <button id="minusMember"
+                                                        onclick="minusChildPlus()" class="btn-add"><i
+                                                            class="fa-solid fa-minus"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- adding guest end ................here -->
+                                    </div>
+                                </div>
+                                <div class="reserveButton">
+                                    <button>Reserve</button>
+                                </div>
+                                <p style="opacity: 0.8; font-size: 15px; text-align: center; margin-top: 20px;">You
+                                    won't be
+                                    charged yet</p>
+                                <div class="hotelpreiceTotal" style="display: flex;">
+                                    <h4 id="price-hotel">
+                                        <%= x.price %>
+                                    </h4>
+                                    <h4><span>*</span><span id="dayTotal"></span><span>=</span><span
+                                            id="priceTotal"></span>
+                                    </h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="rating_div">
+                            <h3><i class="fa-solid fa-star"></i> 5.0 · 3Reviews</h3>
+                            <div class="reviwer">
+                                <div class="user">
+                                    <p>
+                                        The room has an stunning interior design, it is located in a complex where you
+                                        can
+                                        access a swimming pool and fitness. The structure is a bit old, but the rooms
+                                        are new
+                                        and clearly recently renovated. It is also possible to have dinner and breakfast
+                                        on
+                                        site, even if the surroundings are quiet and equipped with restaurants. Overall
+                                        an
+                                        excellent experience, the staff is very kind and available for every request!
+                                    </p>
+                                    <div class="user-info">
+                                        <img width="40px" height="30px"
+                                            src="https://a0.muscache.com/im/pictures/user/6d259535-8a38-47d2-ab13-89f0439f5ea7.jpg?im_w=240">
+                                        <p>Chaira
+                                            <br>Itly
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <p>One of the best Airbnb villas out there. The place was amazing and Viganesh was
+                                        very
+                                        helpful. We had an amazing stay.</p>
+                                    <div class="user-info">
+                                        <p>Rahul</p>
+                                        <p>India</p>
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <p>Newly built property with lavish interiors and good views. Great service and
+                                        approachable
+                                        host.
+                                        Overall, great experience!</p>
+                                    <div class="user-info">
+                                        <p>Adi</p>
+                                        <p>India</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="reserveButton">
-                            <button>Reserve</button>
+                        <h3>My Google Maps Demo</h3>
+                        <!--The div element for the map -->
+                        <div id="map" style="margin-left: 30px;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.26817336763!2d73.72107765491077!3d19.991105341744355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddd290b09914b3%3A0xcb07845d9d28215c!2s`${<%= x.city %>}`%2C%20${`<%= x.country %>`}!5e0!3m2!1sen!2sin!4v1706947668336!5m2!1sen!2sin"
+                                width="90%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                        <p style="opacity: 0.8; font-size: 15px; text-align: center; margin-top: 20px;">You won't be
-                            charged yet</p>
-                        <div class="hotelpreiceTotal" style="display: flex;">
-                            <h4 id="price-hotel">
-                                <%= x.price %>
-                            </h4>
-                            <h4><span>*</span><span id="dayTotal"></span><span>=</span><span id="priceTotal"></span>
-                            </h4>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="rating_div">
-                    <h3><i class="fa-solid fa-star"></i> 5.0 · 3Reviews</h3>
-                    <div class="reviwer">
-                        <div class="user">
-                            <p>
-                                The room has an stunning interior design, it is located in a complex where you can
-                                access a swimming pool and fitness. The structure is a bit old, but the rooms are new
-                                and clearly recently renovated. It is also possible to have dinner and breakfast on
-                                site, even if the surroundings are quiet and equipped with restaurants. Overall an
-                                excellent experience, the staff is very kind and available for every request!
-                            </p>
-                            <div class="user-info">
-                                <img width="40px" height="30px"
-                                    src="https://a0.muscache.com/im/pictures/user/6d259535-8a38-47d2-ab13-89f0439f5ea7.jpg?im_w=240">
-                                <p>Chaira
-                                    <br>Itly
-                                </p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <p>One of the best Airbnb villas out there. The place was amazing and Viganesh was very
-                                helpful. We had an amazing stay.</p>
-                            <div class="user-info">
-                                <p>Rahul</p>
-                                <p>India</p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <p>Newly built property with lavish interiors and good views. Great service and approachable
-                                host.
-                                Overall, great experience!</p>
-                            <div class="user-info">
-                                <p>Adi</p>
-                                <p>India</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h3>My Google Maps Demo</h3>
-                <!--The div element for the map -->
-                <div id="map" style="margin-left: 30px;">
-                    <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.26817336763!2d73.72107765491077!3d19.991105341744355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddd290b09914b3%3A0xcb07845d9d28215c!2s`${<%= x.city %>}`%2C%20${`<%= x.country %>`}!5e0!3m2!1sen!2sin!4v1706947668336!5m2!1sen!2sin" width="90%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <%}%>
+                        <%}%>
 
 
 
-                    <%})%>
+                            <%})%>
+            </div>
+
+            <script src="/js/calender.js"></script>
     </div>
 
-    <script src="/js/calender.js"></script>
-   
 
 </body>
 

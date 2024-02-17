@@ -1,6 +1,9 @@
 const express = require('express');
 const app= express();
 const multer= require('multer');
+const dotenv= require('dotenv');
+dotenv.config();
+console.log(process.env.MONGODB_URL)
 //const requireAuth=require('./middleware/authmiddleware')
 const authRoute= require('./routes/authRoutes')
 //const hotelRouter= require('./routes/hotelRoutes')
@@ -91,8 +94,8 @@ app.post('/uploadHotel',upload.array('hotelImg'),async(req,res)=>{
 })
 
 
-app.listen(5000,()=>{
-    console.log('server is listion on 5000')
+app.listen(process.env.PORT,()=>{
+    console.log(`server started at ${process.env.PORT}`)
 })
 
 app.use(authRoute);
