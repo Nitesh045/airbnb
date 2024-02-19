@@ -1,25 +1,34 @@
-// let slideIndex=1;
+
+
+// // // // for upload hotel form
+// let slideIndex = 1;
 // showSlides(slideIndex);
-// function plusSlid(n){
-//    showSlides(slideIndex+=n)
+
+// // Next/previous controls
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
 // }
 
-// function currentSlide(n){
-//     showSlides(slideIndex+=n)
+// // Thumbnail image controls
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
 // }
 
-
-// function showSlides(n){
-//     let slides=document.getElementsByClassName('slid');
-//     let dot = document.getElementsByClassName('dot');
-//     if(n>slides.length){slideIndex=1};
-//     if(n<1){slideIndex=slides.length};
-//     for(let i=0;i<slides.length;i++){
-//         slides[i].style.display='none';
-//     }
-    
-//       slides[slideIndex-1].style.display = "block";
-     
+// function showSlides(n) {
+//   let i;
+//   let slides = document.getElementsByClassName("scroll");
+  
+//   if (n > slides.length) {slideIndex = 1}
+//   if (n < 1) {slideIndex = slides.length}
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";
+//   }
+  
+//   slides[slideIndex-1].style.display = "block";
+//   dots[slideIndex-1].className += " active";
 // }
 
-// // for upload hotel form
+// let count =0
+// function plusSlides(){
+//     count+1;
+// }

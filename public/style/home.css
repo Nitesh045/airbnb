@@ -59,24 +59,29 @@
     text-decoration: none;
     transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
+  .tcket a:active{
+    border-bottom: 1px solid   #3498db;
+    background: #3498db;
+  }
 /* home page */
 .hotels{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    
     text-align: center;
     grid-gap: 20px;
     margin-left: 20px;
     margin-top: 1rem;
 
 }
-.div-img{
+.div-img {
     border: 1px solid grey;
     margin-bottom: 20px;
     width: 16rem;
+    position: relative;
     
 }
-.div-img >img{
+
+.div-img img{
   width: 100%;
   height: 200px;
 }
@@ -90,6 +95,46 @@
   position: relative;
   margin: auto;
 } */
+
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(161, 13, 13);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev{
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  .scroll {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  /* .scroll{
+    display: none;
+  } */
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
 .upper-footer{
     display: grid;
     grid-template-columns: auto auto auto;
@@ -110,7 +155,7 @@
     /* Smaller Resolution Desktops and Laptops */
    .hotels{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns:  auto auto;
    }
    .div-img{
     width: 20rem;

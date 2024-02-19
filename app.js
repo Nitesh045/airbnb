@@ -23,6 +23,7 @@ const hotelinfo=require('./routes/hotelInfo')
 app.set('view engine','ejs');
 app.use(express.static('public'));
 const bodyParser = require('body-parser');
+const cabinRoute = require('./routes/cabin');
 app.use(bodyParser.urlencoded({extended: true}));
 app.get('*',checkUser)
 app.get('/',async(req,res)=>{
@@ -104,3 +105,5 @@ app.use(authRoute);
 
 
 app.use(hotelinfo);
+
+app.use(cabinRoute)
